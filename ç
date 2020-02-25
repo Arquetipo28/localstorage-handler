@@ -19,7 +19,7 @@ function parsedValue (value) {
 // [Function: handle] manages localStorage of any value
 // returned by the passed function argument
 // @block = function
-// @options = { force: boolean, identifier: string }
+// @options = { force: boolean, identifier: string, persistent: boolean }
 function handle (block, options = {}) {
   try {
     localStorageAvailable()
@@ -31,7 +31,15 @@ function handle (block, options = {}) {
     const parsedStoredData = parsedValue(storedData)
     if (storedData && !options.force) return parsedStoredData.value
 
-    let blockResult = typeof block !== 'function' ? block : block()
+    // BLoque papá
+    let blockResult = undefined
+    if (typeof block !== 'function') {
+      // Bloque hijo
+      blockResult = block
+    } else {
+      // Bloque hijo
+      blockResult = block()
+    }
     const clearOptions = {...options, identifier: selectedIdentifier }
     const itemToSave = JSON.stringify({ value: blockResult, options: clearOptions })
     localStorage.setItem(selectedIdentifier, itemToSave)
