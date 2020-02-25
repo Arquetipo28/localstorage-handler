@@ -28,10 +28,10 @@ Here are described all the arguments you can pass to configure the store of your
 [Function: handle] (@block, @options)
 @block = callback
 @options = { force: boolean, identifier: string, expire: @expire }
-@expire -> { months: integer, hours: integer | 1, minutes: integer }
+@expire -> { months: integer, hours: integer, minutes: integer } | dateString
 ```
 
-It is important to define that as default when you pass the expire argument, hour will take a value equal to 1 except that you define it as 0 or any other integer.
+It is important to define that as default each `@expire` argument will be equal to 0
 
 
 ### Examples
@@ -63,6 +63,19 @@ const data = handle(() => {
     // This data will be stored using 'usersData' as key
     return 'Hello World :D'
 }, { identifier: 'usersData', expire: { minutes: 30, hours: 0 } })
+```
+
+Implicit identifier name, including expiration time as string:
+```javascript
+import { handle } from "@arquetipo28/localstorage-handle"
+
+const expire = new Date()
+// Data expires in 10 seconds
+expire.setSeconds(expire.getSeconds() + 10)
+const data = handle(function expirationDateString () {
+    // This data will be stored using 'usersData' as key
+    return 'Hello World :D'
+}, { expire })
 ```
 
 ### Todos
