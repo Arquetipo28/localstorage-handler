@@ -1,7 +1,7 @@
 {
   "name": "@arquetipo28/localstorage-handler",
-  "version": "0.0.1",
-  "description": "Wrapper to store returned data of javascript functions into localStorage",
+  "version": "0.0.2",
+  "description": "Wrapper to save returned data of javascript functions into localStorage",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
@@ -14,7 +14,9 @@
     "module",
     "npm",
     "node",
-    "Arquetipo28"
+    "Arquetipo28",
+    "cache",
+    "memory"
   ],
   "author": "Arquetipo28 (German Reynaga Araiza)",
   "license": "ISC",
