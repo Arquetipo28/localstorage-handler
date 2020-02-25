@@ -1,0 +1,25 @@
+{
+  "name": "localstorage-handler",
+  "version": "0.0.1",
+  "description": "Wrapper to store returned data of javascript functions into localStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Arquetipo28/localstorage-handler.git"
+  },
+  "keywords": [
+    "module",
+    "npm",
+    "node",
+    "Arquetipo28"
+  ],
+  "author": "Arquetipo28 (German Reynaga Araiza)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arquetipo28/localstorage-handler/issues"
+  },
+  "homepage": "https://github.com/Arquetipo28/localstorage-handler#readme"
+}
