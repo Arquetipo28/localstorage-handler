@@ -1,6 +1,6 @@
 {
   "name": "@arquetipo28/localstorage-handler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Wrapper to save returned data of javascript functions into localStorage",
   "main": "index.js",
   "scripts": {
