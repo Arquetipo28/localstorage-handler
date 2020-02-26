@@ -1,4 +1,3 @@
-const { handle } = require('./lib/handler.js')
+const { handle, stored } = require('./lib/handler.js')
 
-module.exports = { handle }
-
+module.exports = { handle, stored }
