@@ -21,15 +21,23 @@ Import it into your project or file
 ```javascript
 // handle is the principal function that will allow you
 // to save your data into localStorage
-import { handle } from '@arquetipo28/localstorage-handler'
+import { handle, stored } from '@arquetipo28/localstorage-handler'
 ```
 ### Arguments
-Here are described all the arguments you can pass to configure the store of your data
+Here are described all the arguments you can pass to configure the store of your data with the `handle` function.
+
 ```ruby
 [Function: handle] (@block, @options)
 @block = callback
 @options = { force: boolean, identifier: string, expire: @expire }
 @expire -> { months: integer, hours: integer, minutes: integer } | dateString
+```
+
+And in the other side we have the stored method to retrieve saved information. It also allows you to modify its behavior trough the options.cleanAfter property which specifies if the getted information is going to be deleted after taking it. You can look for some examples below.
+
+```ruby
+[Function: stored] (@options)
+@options = { identifier: string, cleanAfter: boolean }
 ```
 
 It is important to define that as default each `@expire` argument will be equal to 0
