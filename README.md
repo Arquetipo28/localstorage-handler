@@ -37,7 +37,7 @@ And in the other side we have the stored method to retrieve saved information. I
 
 ```ruby
 [Function: stored] (@options)
-@options = { identifier: string, cleanAfter: boolean }
+@options {object | string} = { identifier: string, cleanAfter: boolean } | 'identifier'
 ```
 
 It is important to define that as default each `@expire` argument will be equal to 0
@@ -113,6 +113,18 @@ const data = stored({ identifier: 'state', cleanAfter: false })
 // 'state' data was removed from localStorage but is was saved in `data` before
 console.log(data) // Output: { state: { message: 'Hello again' } }
 console.log(localStorage) // It should not contain the 'state' data
+```
+
+### 1.1.0 Update
+
+`stored` function now can accept a string argument as `@options` this will be taked as the identifier of the already stored data
+
+```javascript
+import { stored } from '@arquetipo28/localstorage-handler'
+
+// This will do the same as stored({ identifier: 'state', cleanAfter: false })
+const data = stored('state')
+console.log(data) // Output : { stateData: 'This is fucking awesome!' }
 ```
 
 ### Todos
