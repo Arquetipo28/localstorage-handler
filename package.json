@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/Arquetipo28/localstorage-handler#readme",
   "devDependencies": {
-    "mocha": "^7.0.1"
+    "mocha": "^10.2.0"
   }
 }
